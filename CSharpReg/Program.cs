@@ -12,6 +12,7 @@ namespace CSharpReg
             Console.WriteLine("Bedrag in kassa?");
             decimal bedragInKassaBegin = decimal.Parse(Console.ReadLine());
 
+            string terugTeGeven = "";
             string keuze = "";
             decimal dagTotaal = 0;
             int aantalBonnen = 0;
@@ -102,17 +103,30 @@ namespace CSharpReg
                             bonTotaal = 0;
                             bonString = "";
                         }
+
                     }
                 }
-                // TODO: If-statement corrigeren
-                else if (keuze == 2)
+                keuze = Console.ReadLine();
+                if (keuze == "2")
                 {
                     // TODO: Afmaken
+                    Console.WriteLine("Uitvoeren terugbetaling");
+                    Console.WriteLine("Bedrag originele bon:");
+                    terugTeGeven = Console.ReadLine();
+                    int bedrag = int.Parse(terugTeGeven);
+                    decimal dagTotaalTerug = bedrag;
+                  
+                    
                 }
-                // TODO: If-statement corrigeren
-                else if (keuze == 3)
+                keuze = Console.ReadLine();
+                if (keuze == "3")
                 {
                     // TODO: Afmaken
+                    Console.WriteLine("======== DAG TOTALEN =========");
+                    Console.WriteLine("In kassa begin:    " + bedragInKassaBegin);
+                    Console.WriteLine("Verkocht:          " + dagTotaal);
+                    Console.WriteLine("Retour:            " + dagTotaalTerug);
+                    Console.WriteLine("In Kassa:          " + (bedragInKassaBegin + dagTotaal - dagTotaalTerug));
                 }
             }
             Console.WriteLine("Hoeveel zit er nu in de kassa?");
